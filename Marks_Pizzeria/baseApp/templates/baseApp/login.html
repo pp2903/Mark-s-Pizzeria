@@ -13,10 +13,12 @@
     <form action="" method="POST">
       {% csrf_token %}
       <legend>Log In!!</legend>
-      {{form.as_ul}}
+      {{form.as_p}}
+
       <input class='btn btn-success submit-button' type="submit">
   
     </form>
+    <small>New User? <a href="{% url 'signup-page' %}">Sign Up!</a> </small>
 
   </div>
   

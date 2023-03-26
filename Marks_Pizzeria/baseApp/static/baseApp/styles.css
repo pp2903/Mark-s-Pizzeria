@@ -1,3 +1,11 @@
+*{
+    position: relative;
+}
+
+
+
+
+
 #MainLogo{
     color: #352;
     transition:  .2s;
@@ -87,7 +95,8 @@ hr{
 }
 
 .signUpBody{
-    position: relative;
+    position:relative;
+    
     
     /* display: inline-block; */
 }
@@ -229,8 +238,9 @@ ul{
 
 
 .card-title{
-    font-family: 'MOFAZE DEL MONTE', sans-serif;
-    font-weight: 800;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight:bold;
+    text-shadow: 2px 2px 4px #e0d5d5;
                                                 
 }
 
@@ -259,30 +269,23 @@ ul{
 }
 
 
-*{
-    position: relative;
-}
+
 .form-body{
     padding: 20px;
-    margin-top: 40px;
-    right: 20px;
-    position: absolute;
-
-    display: inline;
-    /* padding:20px; */
-    /* margin: 20px; */
-    /* width: 20rem; */
+    /* left: 60%;    
+    width: 500px; */
     
+}
 
-}
+
 legend{
-    margin-left: 15px;
-}
-li{
-    margin: 20px;
+    margin-left: 0px;
+    font-family:Arial, Helvetica, sans-serif ;
+    font-weight: bold;
 }
 
 .submit-button{
     position: inherit;
-    left: 230px;
+    /* left: 200px; */
 }
+
