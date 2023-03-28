@@ -42,8 +42,39 @@
               <a class="nav-link active" aria-current="page" href="{% url 'menu-page' %}">Order</a>
             </li>
 
-            <li class="nav-item dropdown">
-              <a
+            
+            {% if user.is_authenticated %}
+            
+            {% else %}
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'login-page' %}"
+                >Login/SignUp</a
+              >
+            </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'about-page' %}"
+                >About</a
+              >
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'logout-page' %}"
+                >Logout</a
+              >
+            {% endif %}
+            
+              
+              
+              
+            
+            
+            
+            
+          </ul>
+          <span class="navbar-profile">
+            <a
                 class="nav-link active dropdown-toggle"
                 href="#"
                 id="navbarDropdown"
@@ -51,31 +82,27 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
+              {% if user.is_authenticated %}
+                {{ user.username }}
+              {% else %}
                 Profile
+              {% endif %}
+              
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">My Orders</a></li>
+                <li><a class="dropdown-item" href="{% url 'checkout-page' %}">My Orders</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
                   <a class="dropdown-item" href="#">Something else here</a>
                 </li>
               </ul>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'login-page' %}"
-                >Login/SignUp</a
+          </span>
+          <span class="cart">
+            <a  aria-current="page" href="{% url 'checkout-page' %}"
+                ><img src="{% static 'baseApp/images/cart.png' %}"></a
               >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'about-page' %}"
-                >About</a
-              >
-            </li>
-            
-            
-          </ul>
+          </span>
           {% comment %} <form class="d-flex" role="search">
             <input
               class="form-control me-2"
@@ -196,7 +223,7 @@
             <h5 class="">Follow us</h5>
             <ul class="social-list">
               <li class="social">
-                <a href="www.facebook.com"
+                <a href="https://www.facebook.com/pranshu.priyam/"
                   ><img
                     class="social-logo"
                     src="{% static 'baseApp/images/social-icons/facebook.png' %}"
@@ -204,7 +231,7 @@
                 /></a>
               </li>
               <li class="social">
-                <a href="www.twitter.com"
+                <a href="https://twitter.com/PranshuPriyam"
                   ><img
                     class="social-logo"
                     src="{% static 'baseApp/images/social-icons/twitter.png' %}"
@@ -212,7 +239,7 @@
                 /></a>
               </li>
               <li class="social">
-                <a href="www.instagram.com"
+                <a href="https://www.instagram.com/pranshupriyam/"
                   ><img
                     class="social-logo"
                     src="{% static 'baseApp/images/social-icons/instagram.png'%}"

@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .forms import UserRegistrationForm
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def index(request):
 
@@ -34,5 +36,10 @@ def login(request):
     context=  {}
     # form = 
     return render(request,'baseApp/login.html')
+
+@login_required
+def checkout(request):
+
+    return render(request, "baseApp/checkout.html")
 
     

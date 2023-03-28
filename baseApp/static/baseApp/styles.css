@@ -26,8 +26,9 @@
 .navbar{
     padding-bottom: 2%;
     background-color: beige;
-    /* position: sticky; */
+    position: sticky;
     z-index: 10;
+
 }
 
 
@@ -287,5 +288,16 @@ legend{
 .submit-button{
     position: inherit;
     /* left: 200px; */
+}
+
+
+
+.cart,.navbar-profile{
+    padding-right: 10px;
+    margin-right: 40px;
+}
+
+.logout-heading{
+    padding: 20px;
 }
 
